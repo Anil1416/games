@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive World Map - Population Census</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-draw/1.0.4/leaflet.draw.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Interactive World Population Census Map</h1>
+        <div class="controls">
+            <input type="text" id="searchBox" placeholder="Search country..." />
+            <select id="viewToggle">
+                <option value="population">Total Population</option>
+                <option value="density">Population Density</option>
+                <option value="growth">Growth Rate</option>
+            </select>
+            <button id="resetBtn">Reset Map</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="map"></div>
+        <div class="sidebar">
+            <div class="info-panel">
+                <h3>Country Information</h3>
+                <div id="countryInfo">
+                    <p>Hover over a country to see details</p>
+                </div>
+            </div>
+            <div class="legend">
+                <h3>Legend</h3>
+                <div id="legend-content"></div>
+            </div>
+            <div class="statistics">
+                <h3>Global Statistics</h3>
+                <div id="stats">
+                    <div class="stat-item">
+                        <label>World Population:</label>
+                        <span id="worldPop">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <label>Countries:</label>
+                        <span id="countriesCount">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
